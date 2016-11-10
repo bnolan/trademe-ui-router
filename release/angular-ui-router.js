@@ -5871,22 +5871,22 @@ return /******/ (function(modules) { // webpackBootstrap
 	        common_3.bindFunctions(StateService.prototype, this, this, boundFns);
 	    }
 	    Object.defineProperty(StateService.prototype, "transition", {
-	        get: function () { return this.router.globals.transition; },
+	        get: function () { return this.router && this.router.globals.transition; },
 	        enumerable: true,
 	        configurable: true
 	    });
 	    Object.defineProperty(StateService.prototype, "params", {
-	        get: function () { return this.router.globals.params; },
+	        get: function () { return this.router && this.router.globals.params; },
 	        enumerable: true,
 	        configurable: true
 	    });
 	    Object.defineProperty(StateService.prototype, "current", {
-	        get: function () { return this.router.globals.current; },
+	        get: function () { return this.router && this.router.globals.current; },
 	        enumerable: true,
 	        configurable: true
 	    });
 	    Object.defineProperty(StateService.prototype, "$current", {
-	        get: function () { return this.router.globals.$current; },
+	        get: function () { return this.router && this.router.globals.$current; },
 	        enumerable: true,
 	        configurable: true
 	    });
