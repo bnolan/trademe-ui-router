@@ -1,0 +1,12 @@
+{
+  "name": "trademe-ui-router",
+  "version": "1.0.0",
+  "description": "",
+  "main": "release/angular-ui-router.js",
+  "typings": "commonjs/ng1.d.ts",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC"
+}
