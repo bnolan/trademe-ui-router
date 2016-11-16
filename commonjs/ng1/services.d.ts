@@ -2,7 +2,7 @@ import { IInjectable } from "../common/common";
 import { TypedMap } from "../common/common";
 import { StateProvider } from "./stateProvider";
 import { ResolveContext } from "../resolve/resolveContext";
-import angular from 'angular';
+import * as angular from 'angular';
 import IScope = angular.IScope;
 /**
  * Annotates a controller expression (may be a controller function(), a "controllername",
