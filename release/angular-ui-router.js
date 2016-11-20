@@ -1234,7 +1234,17 @@ return /******/ (function(modules) { // webpackBootstrap
 	    }
 	    Rejection.prototype.toString = function () {
 	        var detailString = function (d) {
-	            return d && d.toString !== Object.prototype.toString ? d.toString() : strings_1.stringify(d);
+	        	var result;
+
+	        	if (d) {
+	        		try {
+	        			result = d.toString !== Object.prototype.toString ? d.toString() : strings_1.stringify(d);
+	        		} catch (e) {
+	        			result = "Unable to stringify rejection";
+	        		}
+	        	}
+
+	        	return result;
 	        };
 	        var type = this.type, message = this.message, detail = detailString(this.detail);
 	        return "TransitionRejection(type: " + type + ", message: " + message + ", detail: " + detail + ")";
@@ -6141,6 +6151,11 @@ return /******/ (function(modules) { // webpackBootstrap
 	        if (toParams === void 0) { toParams = {}; }
 	        if (options === void 0) { options = {}; }
 	        var router = this.router;
+
+	        if (!router) {
+	            return common_1.silentRejection('No router found');
+	        }
+
 	        var globals = router.globals;
 	        var transHistory = globals.transitionHistory;
 	        options = common_1.defaults(options, transitionService_1.defaultTransOpts);
