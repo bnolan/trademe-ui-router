@@ -1,6 +1,6 @@
 {
   "name": "trademe-ui-router",
-  "version": "1.3.0",
+  "version": "1.4.0",
   "description": "",
   "main": "release/angular-ui-router.js",
   "typings": "commonjs/ng1.d.ts",
