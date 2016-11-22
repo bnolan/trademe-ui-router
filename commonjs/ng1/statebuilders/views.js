@@ -98,8 +98,13 @@ var Ng1ViewConfig = (function () {
     Ng1ViewConfig.prototype.load = function () {
         var _this = this;
         var $q = coreservices_1.services.$q;
-        if (!this.hasTemplate())
-            throw new Error("No template configuration specified for '" + this.viewDecl.$uiViewName + "@" + this.viewDecl.$uiViewContextAnchor + "'");
+
+        // Trademe change - we have situations where this error is triggering incorrectly, so for
+        // now we log it and let the #load continue.
+        if (!this.hasTemplate()) {
+            console.error("No template configuration specified for '" + this.viewDecl.$uiViewName + "@" + this.viewDecl.$uiViewContextAnchor + "'");
+        }
+        
         var context = new resolveContext_1.ResolveContext(this.path);
         var params = this.path.reduce(function (acc, node) { return common_1.extend(acc, node.paramValues); }, {});
         var promises = {
