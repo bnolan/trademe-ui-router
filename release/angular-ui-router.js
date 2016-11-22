@@ -7134,8 +7134,9 @@ return /******/ (function(modules) { // webpackBootstrap
 	    Ng1ViewConfig.prototype.load = function () {
 	        var _this = this;
 	        var $q = coreservices_1.services.$q;
-	        if (!this.hasTemplate())
-	            throw new Error("No template configuration specified for '" + this.viewDecl.$uiViewName + "@" + this.viewDecl.$uiViewContextAnchor + "'");
+	        if (!this.hasTemplate()) {
+	            console.error("No template configuration specified for '" + this.viewDecl.$uiViewName + "@" + this.viewDecl.$uiViewContextAnchor + "'");
+	        }
 	        var context = new resolveContext_1.ResolveContext(this.path);
 	        var params = this.path.reduce(function (acc, node) { return common_1.extend(acc, node.paramValues); }, {});
 	        var promises = {
