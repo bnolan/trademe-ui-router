@@ -5399,8 +5399,10 @@ return /******/ (function(modules) { // webpackBootstrap
 	    return { val: root ? url.substring(1) : url, root: root };
 	};
 	function nameBuilder(state) {
-	    if (state.lazyLoad)
-	        state.name = state.self.name + ".**";
+		// Removed by TradeMe, we don't lazy load sub states, we list them all in the generated-routes
+
+	    // if (state.lazyLoad)
+	    //     state.name = state.self.name + ".**";
 	    return state.name;
 	}
 	function selfBuilder(state) {
@@ -5416,9 +5418,12 @@ return /******/ (function(modules) { // webpackBootstrap
 	var getUrlBuilder = function ($urlMatcherFactoryProvider, root) {
 	    return function urlBuilder(state) {
 	        var stateDec = state;
-	        if (stateDec && stateDec.url && stateDec.lazyLoad) {
-	            stateDec.url += "{remainder:any}"; // match any path (.*)
-	        }
+			// Removed by TradeMe, we don't lazy load sub states, we list them all in the generated-routes
+
+	        // if (stateDec && stateDec.url && stateDec.lazyLoad) {
+	        //     stateDec.url += "{remainder:any}"; // match any path (.*)
+	        // }
+	        
 	        var parsed = parseUrl(stateDec.url), parent = state.parent;
 	        var url = !parsed ? stateDec.url : $urlMatcherFactoryProvider.compile(parsed.val, {
 	            params: state.params || {},
