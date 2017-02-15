@@ -4898,6 +4898,10 @@ return /******/ (function(modules) { // webpackBootstrap
 	                var state = _a[0], params = _a[1];
 	                return !!params;
 	            });
+
+                // Trademe fix - filter out abstract routes
+                matches = matches.filter((s) => !s[0].abstract);
+
 	            if (matches.length) {
 	                var _a = matches[0], state = _a[0], params = _a[1];
 	                return transition.router.stateService.target(state, params, transition.options());
