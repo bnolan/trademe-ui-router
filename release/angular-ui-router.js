@@ -4900,7 +4900,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	            });
 
                 // Trademe fix - filter out abstract routes
-                matches = matches.filter((s) => !s[0].abstract);
+                matches = matches.filter(function (s) { return !s[0].abstract });
 
 	            if (matches.length) {
 	                var _a = matches[0], state = _a[0], params = _a[1];
